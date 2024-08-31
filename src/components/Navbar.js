@@ -20,28 +20,28 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-between p-2 bg-gray-500 shadow-md">
+    <div className="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-between p-2 bg-gray-500 shadow-md relative">
       
-    
+      {/* Logo Section */}
       <div className="flex items-center text-xl font-bold cursor-pointer mb-2 md:mb-0 ml-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-400">
         VogueCart <img src={cart} alt="cart" className="h-6 w-6 object-contain ml-2" />
       </div>
       
-    
-      <div className="md:hidden flex items-center">
+      {/* Mobile Menu Toggle */}
+      <div className="md:hidden absolute top-2 right-4">
         <FaBars className="text-white text-2xl cursor-pointer" onClick={toggleMenu} />
       </div>
 
-      
+      {/* Menu Items */}
       <div className={`flex-col md:flex-row items-center md:space-x-6 mb-2 md:mb-0 mr-4 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
-        <ol className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-6 text-white mt-2 pt-2 pr-15">
+        <ol className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-6 text-white mt-2 pt-2">
           <li className="cursor-pointer hover:text-black" onClick={() => navigate("/")}>Home</li>
           <li className="cursor-pointer hover:text-black" onClick={() => navigate("/men")}>Men</li>
           <li className="cursor-pointer hover:text-black" onClick={() => navigate('/women')}>Women</li>
           <li className="cursor-pointer hover:text-black" onClick={() => navigate('/kids')}>Kids</li>
           <li className="cursor-pointer hover:text-black" onClick={() => navigate('/products')}>Products</li>
         </ol>
-        
+
         <div className="flex items-center mb-2 md:mb-0">
           <div className="relative flex items-center">
             <input

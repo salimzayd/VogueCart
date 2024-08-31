@@ -13,16 +13,14 @@ const Footer = lazy(() => import('./components/Footer'));
 function App() {
   return (
     <div className="App">
-      {/* Wrap Navbar with Suspense */}
+
       <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
       </Suspense>
 
       <Routes>
-        {/* Wrap Route components with Suspense */}
-        <Route 
-          path="/" 
-          element={
+      
+        <Route path="/" element={
             <Suspense fallback={<div>Loading Banner...</div>}>
               <Banner />
             </Suspense>
